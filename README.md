@@ -5,4 +5,4 @@
 
 
 
-![Game](https://user-images.githubusercontent.com/104451273/185737587-e82535ca-8388-424b-8e26-fe4626cad19e.png)
+![Game](https://user-images.githubusercontent.com/104451273/185758908-a6df6edd-15c7-408f-bb4c-f58a31616562.png)
