@@ -10,12 +10,12 @@ public:
 	CitiesGame() {
 		int amount;
 		string name;
-		cout << "Ââåäèòå êîëè÷åñòâî èãðîêîâ: ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð²: ";
 		cin >> amount;
 		cin.ignore();
 		for (size_t i = 0; i < amount; i++) {
 			system("cls");
-			cout << "Ââåäèòå èìÿ èãðîêà " << i + 1 << ": ";
+			cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð¸Ð³Ñ€Ð¾ÐºÐ° " << i + 1 << ": ";
 			getline(cin, name);
 			players.push_back(name);
 		}
@@ -25,15 +25,15 @@ public:
 		int player = 0;
 		string city;
 		while (this->players.size() > 1) {
-			cout << "Õîä èãðîêà " << players[player] << endl
-				<< "Ââåäèòå íàçâàíèå ãîðîäà";
+			cout << "Ð¥Ð¾Ð´ Ð¸Ð³Ñ€Ð¾ÐºÐ° " << players[player] << endl
+				<< "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð³Ð¾Ñ€Ð¾Ð´Ð°";
 			if (!logic.isUsedCitiesEmpty())
-				cout << " íà áóêâó \"" << logic.getLastLetter() << "\" èëè \"Ñäàþñü\"";
+				cout << " Ð½Ð° Ð±ÑƒÐºÐ²Ñƒ \"" << logic.getLastLetter() << "\" Ð¸Ð»Ð¸ \"Ð¡Ð´Ð°ÑŽÑÑŒ\"";
 			cout << ": ";
 			getline(cin, city);
 			cout << endl;
 			city = logic.wordToLowerCase(city);
-			if (city == "ñäàþñü") {
+			if (city == "ÑÐ´Ð°ÑŽÑÑŒ") {
 				players.erase(players.begin() + player);
 				if (player == players.size())
 					player = 0;
@@ -49,6 +49,6 @@ public:
 				cout << e.what() << endl << endl;
 			}
 		}
-		cout << "Ïîáåäèë èãðîê " << players[0] << "!" << endl;
+		cout << "ÐŸÐ¾Ð±ÐµÐ´Ð¸Ð» Ð¸Ð³Ñ€Ð¾Ðº " << players[0] << "!" << endl;
 	}
 };

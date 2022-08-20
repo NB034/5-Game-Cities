@@ -38,11 +38,11 @@ public:
 	}
 	void checkCity(string& city) {
 		if (!isCityExist(city)) 
-			throw exception("Такого города не существует!");
+			throw exception("РўР°РєРѕРіРѕ РіРѕСЂРѕРґР° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚!");
 		if (!isCItyNotUsed(city)) 
-			throw exception("Такой город уже называли!");
+			throw exception("РўР°РєРѕР№ РіРѕСЂРѕРґ СѓР¶Рµ РЅР°Р·С‹РІР°Р»Рё!");
 		if (!isLetterFits(city))
-			throw exception("Город, начинающийся с такой буквы, не подходит!.");
+			throw exception("Р“РѕСЂРѕРґ, РЅР°С‡РёРЅР°СЋС‰РёР№СЃСЏ СЃ С‚Р°РєРѕР№ Р±СѓРєРІС‹, РЅРµ РїРѕРґС…РѕРґРёС‚!.");
 		this->usedCities.push_back(city);
 	}
 	char getLastLetter() const {
@@ -50,15 +50,15 @@ public:
 			return ' ';
 		char letter = usedCities.back().back();
 		int i = 1;
-		while (string("ыьъёй").find(letter) != string::npos) {
+		while (string("С‹СЊСЉС‘Р№").find(letter) != string::npos) {
 			letter = usedCities.back()[usedCities.back().length() - 1 - i];
 			i++;
 		}
 		return letter;
 	}
 	const string& wordToLowerCase(string& str) {
-		string upperCase = "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮЁ";
-		string lowerCase = "йцукенгшщзхъфывапролджэячсмитьбюё";
+		string upperCase = "Р™Р¦РЈРљР•РќР“РЁР©Р—РҐРЄР¤Р«Р’РђРџР РћР›Р”Р–Р­РЇР§РЎРњРРўР¬Р‘Р®РЃ";
+		string lowerCase = "Р№С†СѓРєРµРЅРіС€С‰Р·С…СЉС„С‹РІР°РїСЂРѕР»РґР¶СЌСЏС‡СЃРјРёС‚СЊР±СЋС‘";
 		for (size_t i = 0; i < str.length(); i++)
 			if (upperCase.find(str[i]) != string::npos)
 				str[i] = lowerCase[upperCase.find(str[i])];
